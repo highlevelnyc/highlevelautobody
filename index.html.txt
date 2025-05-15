@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>High Level Auto Body</title>
+  <style>
+    :root {
+      --primary-color: #ff5c00;
+      --dark-bg: #0d0d0d;
+      --light-bg: #f9f9f9;
+      --accent: #007bff;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--light-bg);
+      color: #222;
+      line-height: 1.6;
+    }
+    header {
+      background-color: var(--dark-bg);
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+    }
+    header img {
+      max-width: 180px;
+      margin-bottom: 20px;
+    }
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+    p {
+      margin: 5px 0;
+    }
+    section {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    h2 {
+      font-size: 2em;
+      margin-bottom: 20px;
+      color: var(--primary-color);
+      text-align: center;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    ul li {
+      background: white;
+      margin-bottom: 10px;
+      padding: 15px;
+      border-left: 5px solid var(--primary-color);
+      border-radius: 5px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .gallery img {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    .testimonials blockquote {
+      background: #fff;
+      border-left: 5px solid var(--accent);
+      margin: 10px 0;
+      padding: 15px;
+      font-style: italic;
+      border-radius: 5px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+    .contact {
+      background-color: var(--dark-bg);
+      color: white;
+      padding: 40px 20px;
+      border-radius: 10px;
+      margin-top: 40px;
+      text-align: center;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+    }
+    form input,
+    form textarea {
+      width: 100%;
+      max-width: 600px;
+      padding: 12px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 1em;
+    }
+    form button {
+      background-color: var(--accent);
+      color: white;
+      border: none;
+      padding: 12px 30px;
+      font-size: 1em;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    form button:hover {
+      background-color: #0056b3;
+    }
+    #responseMsg {
+      margin-top: 15px;
+      font-weight: bold;
+      color: #66ff66;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="/mnt/data/WhatsApp Image 2025-01-21 at 22.36.48_90614d8a.jpg" alt="High Level Auto Body Logo" />
+    <h1>High Level Auto Body</h1>
+    <p>Collision, Mechanical & Towing Experts in Monticello, NY</p>
+    <p>📞 Call/Text: 845-707-9977</p>
+  </header>
+
+  <section class="services">
+    <h2>Our Services</h2>
+    <ul>
+      <li>🔧 Collision Repair – Complete bodywork, paint jobs, frame repair</li>
+      <li>🛠️ Mechanical Repairs – Engine diagnostics, transmission, suspension</li>
+      <li>🚙 24/7 Towing – Emergency towing and roadside assistance</li>
+      <li>💨 Detailing – Interior/exterior full detailing, ceramic coatings</li>
+    </ul>
+  </section>
+
+  <section class="gallery">
+    <h2>Our Work</h2>
+    <img src="https://via.placeholder.com/400x250?text=Before+Repair" alt="Before Repair" />
+    <img src="https://via.placeholder.com/400x250?text=After+Repair" alt="After Repair" />
+    <img src="https://via.placeholder.com/400x250?text=Detailing+Finish" alt="Detailing" />
+  </section>
+
+  <section class="testimonials">
+    <h2>Customer Reviews</h2>
+    <blockquote>"They fixed my car like new! Fast, friendly, and professional. Highly recommend!"</blockquote>
+    <blockquote>"Tire exploded while stranded — they came to the hotel and fixed it right there. Amazing!"</blockquote>
+  </section>
+
+  <section class="contact">
+    <h2>Need Help? Contact Us</h2>
+    <form id="contactForm">
+      <input type="text" id="name" placeholder="Your Name" required />
+      <input type="tel" id="phone" placeholder="Phone Number" required />
+      <textarea id="message" placeholder="Tell us what you need..." rows="4" required></textarea>
+      <button type="submit">Send Request</button>
+    </form>
+    <p id="responseMsg"></p>
+  </section>
+
+  <script>
+    document.getElementById("contactForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      document.getElementById("responseMsg").textContent = "Thanks! We'll contact you shortly.";
+      this.reset();
+    });
+  </script>
+</body>
+</html>
